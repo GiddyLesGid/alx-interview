@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# This script generates random log lines simulating web server access logs.
+
 import random
 import sys
 from time import sleep
