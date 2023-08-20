@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''A script that reads stdin line by line and computes metrics'''
 
+'''A script that reads stdin line by line and computes metrics'''
 
 import sys
 
@@ -22,16 +22,16 @@ try:
 
         if counter == 10:
             counter = 0
-            print('File size: {}'.format(total_size))
-            for key, value in sorted(cache.items()):
-                if value != 0:
-                    print('{}: {}'.format(key, value))
+            print('File size:', total_size)
+            for key in sorted(cache, key=int):
+                if cache[key] != 0:
+                    print(f'{key}: {cache[key]}')
 
-except Exception as err:
+except KeyboardInterrupt:
     pass
-
 finally:
-    print('File size: {}'.format(total_size))
-    for key, value in sorted(cache.items()):
-        if value != 0:
-            print('{}: {}'.format(key, value))
+    print('File size:', total_size)
+    for key in sorted(cache, key=int):
+        if cache[key] != 0:
+            print(f'{key}: {cache[key]}')
+
